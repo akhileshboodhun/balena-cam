@@ -21,8 +21,8 @@ kernel_dil = np.ones((10, 10), np.uint8)
 # resolution_good = (1280, 704)
 # resolution_high = (1920, 1088)
 # resolution_nice = (1640, 928)
-# resolution_picked = resolution_presets["picamera"]["default"]
-resolution_picked = (1280, 720)
+resolution_picked = resolution_presets["picamera"]["default"]
+# resolution_picked = (1280, 720)
 motion_detected_on = False
 use_picamera = True
 
