@@ -62,7 +62,6 @@ function createNewPeerConnection() {
   new Promise(function (resolve, reject) {
     function mainIceListener() {
       console.warn(pc.iceConnectionState);
-      if  (peerConnectionBad(pc)){
         if (state === 0) {
           //this means webrtc connection is not possible
           startMJPEG();
@@ -70,20 +69,6 @@ function createNewPeerConnection() {
         if (state !== 2) {
           showContainer('fail');
         }
-      }
-      if (peerConnectionGood(pc)) {
-        document.getElementById('webrtc').style.display = 'initial';
-        if (!isVideoAttached) {
-          if (state === 0) {
-            state = 1;
-          }
-          isVideoAttached = true;
-          attachStreamToVideoElement(pc, document.getElementById('video'));
-          cleanup();
-          startVideoFreezeDetection(pc);
-        }
-        showContainer('video');
-      }
     }
     pc.addEventListener('iceconnectionstatechange', mainIceListener);
     resolve();
