@@ -152,7 +152,7 @@ class CameraDevice():
         return self.rotate(fg)
 
     async def get_jpeg_frame(self):
-        encode_param = (int(cv2.IMWRITE_JPEG_QUALITY), 90)
+        encode_param = (int(cv2.IMWRITE_JPEG_QUALITY), 50)
         frame = await self.get_latest_frame()
         frame, encimg = cv2.imencode('.jpg', frame, encode_param)
         return encimg.tostring()
