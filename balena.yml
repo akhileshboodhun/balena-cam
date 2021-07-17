@@ -16,6 +16,7 @@ data:
     - BALENA_HOST_CONFIG_gpu_mem_256: 192
     - BALENA_HOST_CONFIG_gpu_mem_512: 256
     - BALENA_HOST_CONFIG_gpu_mem_1024: 448
+    - BALENA_HOST_CONFIG_disable_camera_led: 1
   defaultDeviceType: "raspberrypi3"
   supportedDeviceTypes:
     - "raspberrypi3"
