@@ -329,7 +329,7 @@ async def mjpeg_handler(request):
     while True:
         data = await camera_device.get_jpeg_frame()
         # this means that the maximum FPS is 5
-        await asyncio.sleep(0.1)  # ????
+        await asyncio.sleep(0.05)  # ????
         await response.write(
             '--{}\r\n'.format(boundary).encode('utf-8'))
         await response.write(b'Content-Type: image/jpeg\r\n')
