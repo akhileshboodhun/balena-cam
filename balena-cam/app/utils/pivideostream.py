@@ -11,6 +11,7 @@ class PiVideoStream:
         # set camera parameters
         self.camera.resolution = resolution
         self.camera.framerate = framerate
+        self.camera.led = False
 
         # set optional camera parameters (refer to PiCamera docs)
         for (arg, value) in kwargs.items():
