@@ -253,7 +253,7 @@ function startMJPEG() {
         clearInterval(draw);
         showContainer('fail');
       }
-    }, 50);
+    }, 10);
   }
 
   showContainer('mjpeg');
