@@ -187,6 +187,9 @@ class PiCameraDevice():
     async def get_jpeg_frame(self):
         encode_param = (int(cv2.IMWRITE_JPEG_QUALITY), 90)
         frame = await self.get_latest_frame()
+        kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
+        frame = cv2.filter2D(frame, -1, kernel) #sharpening
+        frame = cv2.resize(frame, (640,480), interpolation = cv2.INTER_AREA) # downsizing
         frame, encimg = cv2.imencode('.jpg', frame, encode_param)
         return encimg.tostring()
 
