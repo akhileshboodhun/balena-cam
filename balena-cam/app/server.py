@@ -167,7 +167,7 @@ class PiCameraDevice():
         # resolution = (1280, 720)
         # resolution = (1920, 1088) # work for only a period
         # resolution = (3280, 2464)
-        framerate = 24
+        framerate = 10
         from utils.pivideostream import PiVideoStream
         self.stream = PiVideoStream(resolution=resolution_picked,
                                     framerate=framerate)
